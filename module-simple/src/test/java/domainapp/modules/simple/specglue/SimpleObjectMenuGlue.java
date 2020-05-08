@@ -27,6 +27,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import domainapp.modules.simple.dom.impl.SimpleObject;
 import domainapp.modules.simple.dom.impl.SimpleObjects;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
