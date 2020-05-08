@@ -24,8 +24,8 @@ import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.Nature;
 import org.apache.isis.applib.services.i18n.TranslatableString;
 
-import domainapp.modules.simple.dom.impl.SimpleObject;
-import domainapp.modules.simple.dom.impl.SimpleObjects;
+import domainapp.modules.simple.dom.afiliados.SimpleObject;
+import domainapp.modules.simple.dom.afiliados.SimpleObjects;
 
 @DomainObject(
         nature = Nature.VIEW_MODEL,

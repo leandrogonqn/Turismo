@@ -24,8 +24,8 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 
-import domainapp.modules.simple.dom.impl.SimpleObject;
-import domainapp.modules.simple.dom.impl.SimpleObjects;
+import domainapp.modules.simple.dom.afiliados.SimpleObject;
+import domainapp.modules.simple.dom.afiliados.SimpleObjects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
