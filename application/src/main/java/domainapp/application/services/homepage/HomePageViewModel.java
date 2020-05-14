@@ -24,8 +24,8 @@ import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.Nature;
 import org.apache.isis.applib.services.i18n.TranslatableString;
 
-import domainapp.modules.simple.dom.afiliados.SimpleObject;
-import domainapp.modules.simple.dom.afiliados.SimpleObjects;
+import domainapp.modules.simple.dom.provincia.Provincia;
+import domainapp.modules.simple.dom.provincia.ProvinciaMenu;
 
 @DomainObject(
         nature = Nature.VIEW_MODEL,
@@ -37,10 +37,10 @@ public class HomePageViewModel {
         return TranslatableString.tr("{num} objects", "num", getObjects().size());
     }
 
-    public List<SimpleObject> getObjects() {
-        return simpleObjects.listAll();
+    public List<Provincia> getObjects() {
+        return provincia.listar();
     }
 
     @javax.inject.Inject
-    SimpleObjects simpleObjects;
+    ProvinciaMenu provincia;
 }

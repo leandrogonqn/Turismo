@@ -19,7 +19,7 @@
 -->
 <mb3:menuBars xsi:schemaLocation="http://isis.apache.org/applib/layout/menubars/bootstrap3 http://isis.apache.org/applib/layout/menubars/bootstrap3/menubars.xsd http://isis.apache.org/applib/layout/component http://isis.apache.org/applib/layout/component/component.xsd http://isis.apache.org/applib/layout/links http://isis.apache.org/applib/layout/links/links.xsd" xmlns:cpt="http://isis.apache.org/applib/layout/component" xmlns:lnk="http://isis.apache.org/applib/layout/links" xmlns:mb3="http://isis.apache.org/applib/layout/menubars/bootstrap3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <mb3:primary>
-        <mb3:menu>
+<!--         <mb3:menu>
             <mb3:named>Simple Objects</mb3:named>
             <mb3:section>
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="create">
@@ -32,7 +32,7 @@
                     <cpt:named>List All</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
-        </mb3:menu>
+        </mb3:menu> -->
         <mb3:menu unreferencedActions="true">
             <mb3:named>Other</mb3:named>
         </mb3:menu>
@@ -47,11 +47,11 @@
                 <mb3:serviceAction objectType="isisApplib.FixtureScriptsDefault" id="runFixtureScriptWithAutoComplete">
                     <cpt:named>Run Fixture Script</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="isisApplib.FixtureScriptsDefault" id="recreateObjectsAndReturnFirst">
+<!--                 <mb3:serviceAction objectType="isisApplib.FixtureScriptsDefault" id="recreateObjectsAndReturnFirst">
                     <cpt:named>Recreate Objects And Return First</cpt:named>
-                </mb3:serviceAction>
+                </mb3:serviceAction> -->
             </mb3:section>
-            <mb3:section>
+     <!--        <mb3:section>
                 <mb3:serviceAction objectType="isisApplib.LayoutServiceMenu" id="downloadLayouts">
                     <cpt:named>Download Object Layouts (ZIP)</cpt:named>
                 </mb3:serviceAction>
@@ -88,7 +88,7 @@
                 <mb3:serviceAction objectType="isisApplib.TranslationServicePoMenu" id="switchToWritingTranslations">
                     <cpt:named>Switch To Writing Translations</cpt:named>
                 </mb3:serviceAction>
-            </mb3:section>
+            </mb3:section> -->
             <mb3:section>
                 <mb3:serviceAction objectType="isisApplib.HsqlDbManagerMenu" id="hsqlDbManager">
                     <cpt:named>HSQL DB Manager</cpt:named>
@@ -99,11 +99,11 @@
     <mb3:tertiary>
         <mb3:menu>
             <mb3:named>Configuration Service Menu</mb3:named>
-            <mb3:section>
+ <!--            <mb3:section>
                 <mb3:serviceAction objectType="isisApplib.ConfigurationServiceMenu" id="configuration">
                     <cpt:named>Configuration</cpt:named>
                 </mb3:serviceAction>
-            </mb3:section>
+            </mb3:section> -->
         </mb3:menu>
     </mb3:tertiary>
 </mb3:menuBars>
