@@ -161,6 +161,38 @@
             <scope>test</scope>
         </dependency>
 
+                <!-- shiro config -->
+		<dependency>
+			<groupId>org.isisaddons.module.security</groupId>
+			<artifactId>isis-module-security-dom</artifactId>
+			<version>1.16.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>0.3m</version>
+		</dependency>
+		<!-- shiro config -->
+		
+						<!-- AGREGO PARA JASPERREPORTS-->
+		<dependency>
+		    <groupId>net.sf.jasperreports</groupId>
+		    <artifactId>jasperreports</artifactId>
+		    <version>6.3.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-email</artifactId>
+		    <version>1.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.2</version>
+		</dependency>
+				<!-- AGREGO PARA JASPERREPORTS-->
+				
     </dependencies>
 
 </project>

@@ -2,8 +2,6 @@ package domainapp.modules.simple.dom.categoria;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.apache.isis.applib.annotation.Action;
 import org.apache.isis.applib.annotation.ActionLayout;
 import org.apache.isis.applib.annotation.BookmarkPolicy;
@@ -15,21 +13,21 @@ import org.apache.isis.applib.annotation.ParameterLayout;
 import org.apache.isis.applib.annotation.SemanticsOf;
 
 @DomainService(nature = NatureOfService.VIEW_MENU_ONLY, repositoryFor = Categoria.class, objectType="simple.CategoriaMenu")
-@DomainServiceLayout(named = "Productos", menuOrder= "30.1")
+@DomainServiceLayout(named = "Productos", menuOrder = "30.1")
 public class CategoriaMenu {
 
-	@Action(semantics=SemanticsOf.SAFE)
+	@Action(semantics = SemanticsOf.SAFE)
 	@ActionLayout(named = "Crear Categoria")
 	@MemberOrder(sequence = "1")
-	public Categoria crear(@ParameterLayout(named="Codigo") final int categoriaCodigo, 
-			@ParameterLayout(named="Nombre") final String categoriaNombre) {
+	public Categoria crear(@ParameterLayout(named="Codigo") final int categoriaCodigo,
+			@ParameterLayout(named = "Nombre") final String categoriaNombre) {
 		return categoriaRepository.crear(categoriaCodigo, categoriaNombre);
 	}
 	
-	@Action(semantics=SemanticsOf.SAFE)
-	@ActionLayout(named = "Listar Categorias")
+	@Action(semantics = SemanticsOf.SAFE)
+	@ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listar todas las Categorias")
 	@MemberOrder(sequence = "2")
-	public List<Categoria> listar(){
+	public List<Categoria> listar() {
 		return categoriaRepository.listar();
 	}
 	
@@ -48,7 +46,7 @@ public class CategoriaMenu {
 
 	}
 	
-	@Inject
+	@javax.inject.Inject
 	CategoriaRepository categoriaRepository;
 	
 }

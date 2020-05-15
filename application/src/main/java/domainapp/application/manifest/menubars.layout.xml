@@ -19,20 +19,90 @@
 -->
 <mb3:menuBars xsi:schemaLocation="http://isis.apache.org/applib/layout/menubars/bootstrap3 http://isis.apache.org/applib/layout/menubars/bootstrap3/menubars.xsd http://isis.apache.org/applib/layout/component http://isis.apache.org/applib/layout/component/component.xsd http://isis.apache.org/applib/layout/links http://isis.apache.org/applib/layout/links/links.xsd" xmlns:cpt="http://isis.apache.org/applib/layout/component" xmlns:lnk="http://isis.apache.org/applib/layout/links" xmlns:mb3="http://isis.apache.org/applib/layout/menubars/bootstrap3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <mb3:primary>
-<!--         <mb3:menu>
-            <mb3:named>Simple Objects</mb3:named>
+        <mb3:menu>
+			<mb3:named>Clientes</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="create">
-                    <cpt:named>Create</cpt:named>
+                <mb3:serviceAction objectType="simple.AfiliadoVisualizacionMenu" id="listar">
+                    <cpt:named>Listar Todos los afiliados</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="findByName">
-                    <cpt:named>Find By Name</cpt:named>
+                <mb3:serviceAction objectType="simple.AfiliadoVisualizacionMenu" id="buscarPorLP">
+                    <cpt:named>Buscar Afiliados Por LP</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
+                <mb3:serviceAction objectType="simple.AfiliadoVisualizacionMenu" id="buscarPorID">
+                    <cpt:named>Buscar Afiliados Por Id</cpt:named>
+                </mb3:serviceAction>   
+                <mb3:serviceAction objectType="simple.AfiliadoVisualizacionMenu" id="buscarPorDni">
+                    <cpt:named>Buscar afiliado Por DNI</cpt:named>
+                </mb3:serviceAction>       
+                <mb3:serviceAction objectType="simple.AfiliadoVisualizacionMenu" id="buscarPorNombre">
+                    <cpt:named>Buscar afiliado Por Nombre</cpt:named>
+                </mb3:serviceAction>                               	        
+            </mb3:section> 
+        </mb3:menu>         
+        <mb3:menu>
+			<mb3:named>Proveedores</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.ProveedorMenu" id="listar">
+                    <cpt:named>Listar todos los Proveedores</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ProveedorMenu" id="buscarPorRazonSocial">
+                    <cpt:named>Buscar Proveedor Por Razon Social</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ProveedorMenu" id="buscarPorId">
+                    <cpt:named>Buscar proveedor Por Id</cpt:named>
+                </mb3:serviceAction>   
+            </mb3:section> 
+        </mb3:menu>          
+        <mb3:menu>
+            <mb3:named>Productos</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.CategoriaMenu" id="crear">
+                    <cpt:named>Crear Categoria</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.CategoriaMenu" id="listar">
+                    <cpt:named>Listar todas las categorias</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.CategoriaMenu" id="buscarPorNombre">
+                    <cpt:named>Buscar Categoria Por Nombre</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.CategoriaMenu" id="buscarPorCodigo">
+                    <cpt:named>Buscar Categoria Por Codigo</cpt:named>
+                </mb3:serviceAction>        	        
             </mb3:section>
-        </mb3:menu> -->
+        </mb3:menu>           
+        <mb3:menu>
+            <mb3:named>Datos</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.ProvinciaMenu" id="listar">
+                    <cpt:named>Listar todas las Provincias</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ProvinciaMenu" id="buscarPorID">
+                    <cpt:named>Buscar Provincias Por Id</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ProvinciaMenu" id="buscarPorNombre">
+                    <cpt:named>Buscar Provincia Por Nombre</cpt:named>
+				</mb3:serviceAction>                     
+            </mb3:section>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.LocalidadMenu" id="listar">
+                    <cpt:named>Listar todas las Localidades</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.LocalidadMenu" id="buscarPorID">
+                    <cpt:named>Buscar Localidad Por Id</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.LocalidadMenu" id="buscarPorNombre">
+                    <cpt:named>Buscar Localidad Por Nombre</cpt:named>
+                </mb3:serviceAction>     
+            </mb3:section>  
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.PoliticaMenu" id="crear">
+                    <cpt:named>Crear Politicas</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.PoliticaMenu" id="listar">
+                    <cpt:named>Listar todas las Politicas</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>                   
+        </mb3:menu>
         <mb3:menu unreferencedActions="true">
             <mb3:named>Other</mb3:named>
         </mb3:menu>
@@ -47,11 +117,11 @@
                 <mb3:serviceAction objectType="isisApplib.FixtureScriptsDefault" id="runFixtureScriptWithAutoComplete">
                     <cpt:named>Run Fixture Script</cpt:named>
                 </mb3:serviceAction>
-<!--                 <mb3:serviceAction objectType="isisApplib.FixtureScriptsDefault" id="recreateObjectsAndReturnFirst">
+                <mb3:serviceAction objectType="isisApplib.FixtureScriptsDefault" id="recreateObjectsAndReturnFirst">
                     <cpt:named>Recreate Objects And Return First</cpt:named>
-                </mb3:serviceAction> -->
+                </mb3:serviceAction>
             </mb3:section>
-     <!--        <mb3:section>
+            <mb3:section>
                 <mb3:serviceAction objectType="isisApplib.LayoutServiceMenu" id="downloadLayouts">
                     <cpt:named>Download Object Layouts (ZIP)</cpt:named>
                 </mb3:serviceAction>
@@ -88,7 +158,7 @@
                 <mb3:serviceAction objectType="isisApplib.TranslationServicePoMenu" id="switchToWritingTranslations">
                     <cpt:named>Switch To Writing Translations</cpt:named>
                 </mb3:serviceAction>
-            </mb3:section> -->
+            </mb3:section>
             <mb3:section>
                 <mb3:serviceAction objectType="isisApplib.HsqlDbManagerMenu" id="hsqlDbManager">
                     <cpt:named>HSQL DB Manager</cpt:named>
@@ -99,11 +169,11 @@
     <mb3:tertiary>
         <mb3:menu>
             <mb3:named>Configuration Service Menu</mb3:named>
- <!--            <mb3:section>
+            <mb3:section>
                 <mb3:serviceAction objectType="isisApplib.ConfigurationServiceMenu" id="configuration">
                     <cpt:named>Configuration</cpt:named>
                 </mb3:serviceAction>
-            </mb3:section> -->
+            </mb3:section>
         </mb3:menu>
     </mb3:tertiary>
 </mb3:menuBars>
