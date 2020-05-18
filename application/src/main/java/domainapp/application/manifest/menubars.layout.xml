@@ -38,6 +38,20 @@
                     <cpt:named>Buscar afiliado Por Nombre</cpt:named>
                 </mb3:serviceAction>                               	        
             </mb3:section> 
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.ClienteNoAfiliadoMenu" id="crear">
+                    <cpt:named>Crear Cliente No Afiliado</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ClienteNoAfiliadoVisualizacionMenu" id="listar">
+                    <cpt:named>Listar Todos los no afiliados</cpt:named>
+                </mb3:serviceAction>                 
+                <mb3:serviceAction objectType="simple.ClienteNoAfiliadoVisualizacionMenu" id="buscarPorDni">
+                    <cpt:named>Buscar no afiliado Por DNI</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ClienteNoAfiliadoVisualizacionMenu" id="buscarPorNombre">
+                    <cpt:named>Buscar no afiliado por Nombre</cpt:named>
+                </mb3:serviceAction>   
+            </mb3:section> 
         </mb3:menu>         
         <mb3:menu>
 			<mb3:named>Proveedores</mb3:named>

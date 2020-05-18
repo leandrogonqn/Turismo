@@ -17,3 +17,25 @@
  *  under the License.
  */
 
+tr.habilitado {
+	color: black;
+}
+
+tr.inhabilitado {
+    color: #cc0000;
+}
+
+tr.Afiliado {
+	color: #3DCC00;
+	font-weight: bold;
+}
+
+tr.NoAfiliado {
+    color: #0000ff;
+    font-weight: bold;
+}
+tr.crear{
+	background-color: #ff0000;
+	color: #ff0000;
+	
+}
