@@ -52,6 +52,17 @@
                     <cpt:named>Buscar no afiliado por Nombre</cpt:named>
                 </mb3:serviceAction>   
             </mb3:section> 
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.EmpresaMenu" id="crear">
+                    <cpt:named>Crear Empresa</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.EmpresaVisualizacionMenu" id="listar">
+                    <cpt:named>Listar Todas las Empresas</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.EmpresaVisualizacionMenu" id="buscarPorRazonSocial">
+                    <cpt:named>Buscar Empresa Por Razon Social</cpt:named>
+                </mb3:serviceAction>   
+            </mb3:section>             
         </mb3:menu>         
         <mb3:menu>
 			<mb3:named>Proveedores</mb3:named>
