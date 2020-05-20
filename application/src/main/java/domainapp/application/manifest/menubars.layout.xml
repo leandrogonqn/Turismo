@@ -81,6 +81,26 @@
         <mb3:menu>
             <mb3:named>Productos</mb3:named>
             <mb3:section>
+                <mb3:serviceAction objectType="simple.ProductoMenu" id="crear">
+                    <cpt:named>Crear Producto</cpt:named>
+                </mb3:serviceAction>            
+                <mb3:serviceAction objectType="simple.ProductoVisualizacionMenu" id="listar">
+                    <cpt:named>Listar todos los Productos</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ProductoVisualizacionMenu" id="buscarPorCodigo">
+                    <cpt:named>Buscar Productos por Codigo</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ProductoVisualizacionMenu" id="buscarPorLocalidad">
+                    <cpt:named>Buscar Productos por Localidad</cpt:named>
+                </mb3:serviceAction>   
+                <mb3:serviceAction objectType="simple.ProductoVisualizacionMenu" id="buscarPorCategoria">
+                    <cpt:named>Buscar Productos por Categoria</cpt:named>
+                </mb3:serviceAction>       
+                <mb3:serviceAction objectType="simple.ProductoVisualizacionMenu" id="buscarPorProveedor">
+                    <cpt:named>Buscar Productos por Proveedor</cpt:named>
+                </mb3:serviceAction>                               	        
+            </mb3:section>             
+            <mb3:section>
                 <mb3:serviceAction objectType="simple.CategoriaMenu" id="crear">
                     <cpt:named>Crear Categoria</cpt:named>
                 </mb3:serviceAction>
