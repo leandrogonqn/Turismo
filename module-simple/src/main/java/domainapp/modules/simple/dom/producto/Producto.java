@@ -1,15 +1,19 @@
 package domainapp.modules.simple.dom.producto;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.jdo.annotations.IdentityType;
 
 import org.apache.isis.applib.annotation.Action;
+import org.apache.isis.applib.annotation.ActionLayout;
 import org.apache.isis.applib.annotation.Auditing;
+import org.apache.isis.applib.annotation.BookmarkPolicy;
 import org.apache.isis.applib.annotation.CommandReification;
 import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.Editing;
+import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Optionality;
 import org.apache.isis.applib.annotation.Parameter;
 import org.apache.isis.applib.annotation.ParameterLayout;
@@ -28,6 +32,9 @@ import domainapp.modules.simple.dom.localidad.Localidad;
 import domainapp.modules.simple.dom.localidad.LocalidadRepository;
 import domainapp.modules.simple.dom.politica.Politica;
 import domainapp.modules.simple.dom.politica.PoliticaRepository;
+import domainapp.modules.simple.dom.preciohistorico.PrecioHistorico;
+import domainapp.modules.simple.dom.preciohistorico.PrecioHistoricoRepository;
+import domainapp.modules.simple.dom.preciohistorico.TipoPrecio;
 import domainapp.modules.simple.dom.proveedor.Proveedor;
 import domainapp.modules.simple.dom.proveedor.ProveedorRepository;
 import edu.umd.cs.findbugs.annotations.Nullable;
@@ -394,6 +401,43 @@ public class Producto implements Comparable<Producto>{
 	
 	// endregion
 	
+	// acciones
+	@Action(semantics = SemanticsOf.SAFE)
+	@ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Agregar Precio")
+	public Producto agregarPrecio(@ParameterLayout(named = "Fecha desde") final Date precioHistoricoFechaDesde,
+			@ParameterLayout(named = "Fecha Hasta") final Date precioHistoricoFechaHasta,
+			@ParameterLayout(named = "Tipo de Precio") final TipoPrecio precioHistoricoTipoPrecio,
+			@ParameterLayout(named = "Precio") final Double precioHistoricoPrecio) {
+		precioHistoricoRepository.crear(this, precioHistoricoFechaDesde, precioHistoricoFechaHasta, precioHistoricoTipoPrecio, precioHistoricoPrecio);
+		return this;
+	}
+	
+	public String validateAgregarPrecio(final Date precioHistoricoFechaDesde, final Date precioHistoricoFechaHasta, 
+			final TipoPrecio precioHistoricoTipoPrecio, final Double precioHistoricoPrecio) {
+		if(precioHistoricoFechaDesde.after(precioHistoricoFechaHasta))
+			return "ERROR: la fecha desde no puede ser posterior";
+		if (precioHistoricoRepository.verificarCrearPrecio(this, precioHistoricoTipoPrecio, precioHistoricoFechaDesde, precioHistoricoFechaHasta)==false)
+			return "ERROR: la fecha cargada se superpone con otra fecha";
+		return "";
+	}
+	
+	@Action(semantics = SemanticsOf.SAFE)
+	@ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Mostrar precio de producto por rango de fecha")
+	@MemberOrder(sequence = "1")
+	public List<PrecioHistorico> listarPreciosPorRangoDeFecha(@ParameterLayout(named = "Fecha Desde") final Date precioHistoricoFechaDesde,
+			@ParameterLayout(named = "Fecha Hasta") final Date precioHistoricoFechaHasta) {
+		return precioHistoricoRepository.listarPreciosPorRangoDeFecha(this, precioHistoricoFechaDesde, precioHistoricoFechaHasta);
+	}
+	
+	@Action(semantics = SemanticsOf.SAFE)
+	@ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Mostrar todos los precios del producto")
+	@MemberOrder(sequence = "2")
+	public List<PrecioHistorico> listarPrecioDelProducto() {
+		return precioHistoricoRepository.listarPreciosPorProducto(this, true);
+	}
+	
+	// region > injected dependencies
+	
 	@Inject
 	ProveedorRepository proveedorRepository;
 
@@ -411,5 +455,8 @@ public class Producto implements Comparable<Producto>{
 	
 	@Inject
 	PoliticaRepository politicaRepository;
+	
+	@Inject
+	PrecioHistoricoRepository precioHistoricoRepository;
 
 }

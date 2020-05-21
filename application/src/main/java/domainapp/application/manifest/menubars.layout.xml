@@ -99,7 +99,18 @@
                 <mb3:serviceAction objectType="simple.ProductoVisualizacionMenu" id="buscarPorProveedor">
                     <cpt:named>Buscar Productos por Proveedor</cpt:named>
                 </mb3:serviceAction>                               	        
-            </mb3:section>             
+            </mb3:section>       
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.PrecioHistoricoVisualizacionMenu" id="listarPreciosPorRangoDeFecha">
+                    <cpt:named>Mostrar precio de producto por rango de fecha</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.PrecioHistoricoVisualizacionMenu" id="listarPreciosPorProductoPorTipoDeAfiliado">
+                    <cpt:named>Listar Precios por Producto y Tipo Cliente</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.PrecioHistoricoVisualizacionMenu" id="listarPrecioDelProducto">
+                    <cpt:named>Mostrar todos los precios del producto</cpt:named>
+                </mb3:serviceAction>                
+            </mb3:section>                     
             <mb3:section>
                 <mb3:serviceAction objectType="simple.CategoriaMenu" id="crear">
                     <cpt:named>Crear Categoria</cpt:named>
