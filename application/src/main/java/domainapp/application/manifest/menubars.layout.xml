@@ -127,6 +127,29 @@
             </mb3:section>
         </mb3:menu>           
         <mb3:menu>
+			<mb3:named>Reserva</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.ReservaAfiliadoMenu" id="crear">
+                    <cpt:named>Crear Reserva Afiliado</cpt:named>
+                </mb3:serviceAction>            
+                <mb3:serviceAction objectType="simple.ReservaNoAfiliadoMenu" id="crear">
+                    <cpt:named>Crear Reserva No Afiliado</cpt:named>
+                </mb3:serviceAction>                  
+                <mb3:serviceAction objectType="simple.ReservaMenu" id="listar">
+                    <cpt:named>Listar todas las Reservas</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ReservaMenu" id="buscarPorCodigo">
+                    <cpt:named>Buscar reserva por codigo</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ReservaMenu" id="listarVoucherPorLocalidad">
+                    <cpt:named>Listar Vouchers por Localidad</cpt:named>
+                </mb3:serviceAction>   
+                <mb3:serviceAction objectType="simple.ReservaMenu" id="listarVoucherPorProducto">
+                    <cpt:named>Listar Vouchers por Productos</cpt:named>
+                </mb3:serviceAction>                   
+            </mb3:section> 
+        </mb3:menu>                  
+        <mb3:menu>
             <mb3:named>Datos</mb3:named>
             <mb3:section>
                 <mb3:serviceAction objectType="simple.ProvinciaMenu" id="listar">

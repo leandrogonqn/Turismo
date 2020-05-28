@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bs3:grid xsi:schemaLocation="http://isis.apache.org/applib/layout/component http://isis.apache.org/applib/layout/component/component.xsd http://isis.apache.org/applib/layout/grid/bootstrap3 http://isis.apache.org/applib/layout/grid/bootstrap3/bootstrap3.xsd" xmlns:c="http://isis.apache.org/applib/layout/component" xmlns:bs3="http://isis.apache.org/applib/layout/grid/bootstrap3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <bs3:row>
+        <bs3:col span="12" unreferencedActions="true">
+            <c:domainObject bookmarking="AS_ROOT"/>
+        </bs3:col>
+    </bs3:row>
+    <bs3:row>
+        <bs3:col span="12">
+            <bs3:tabGroup>
+                <bs3:tab name="General">
+                    <bs3:row>
+                        <bs3:col span="6">
+                            <c:fieldSet name="Nombre">
+                                <c:action id="borrarReserva"/>
+                                <c:property id="reservaCodigo" namedEscaped="true">
+                                <c:action id="actualizarCodigo" position="RIGHT"></c:action>
+                                </c:property>
+                                <c:property id="reservaFecha" namedEscaped="true">
+                                <c:action id="actualizarFecha" position="RIGHT"></c:action>
+                                </c:property>
+                                <c:property id="reservaCliente" namedEscaped="true">
+                                </c:property>
+                                <c:property id="reservaPrecioTotal" namedEscaped="true">
+                                </c:property>
+                                <c:property id="reservaMemo" namedEscaped="true" multiLine="6">
+                                <c:action id="actualizarMemo" position="RIGHT"></c:action>
+                                </c:property>
+                            </c:fieldSet>
+                        </bs3:col>
+                    </bs3:row>
+                </bs3:tab>
+                <bs3:tab name="Metadata">
+                    <bs3:row>
+                        <bs3:col span="12">
+                            <c:fieldSet name="Metadata"/>
+                        </bs3:col>
+                    </bs3:row>
+                </bs3:tab>
+                <bs3:tab name="Other">
+                    <bs3:row>
+                        <bs3:col span="12">
+                            <c:fieldSet name="Other" unreferencedProperties="true"/>
+                        </bs3:col>
+                    </bs3:row>
+                </bs3:tab>
+            </bs3:tabGroup>
+            <bs3:tabGroup>
+            </bs3:tabGroup>
+        </bs3:col>
+        <bs3:col span="12">
+            <bs3:tabGroup  unreferencedCollections="true">
+            </bs3:tabGroup>
+                        <bs3:tabGroup  unreferencedCollections="true">
+            	<bs3:tab name="Vouchers">
+                    <bs3:row>
+<!--                         <bs3:col span="12" size="MD">
+                        	<c:action id="crearVehiculo"/>
+                        	<c:action id="agregarVehiculo"/>
+				            <c:action id="modificarVehiculo"/>
+				            <c:action id="quitarVehiculo"/>
+				        </bs3:col> -->
+				        <bs3:col span="12">    
+                            <c:collection defaultView="table" id="reservaListaVoucher" />
+                        </bs3:col>
+                    </bs3:row>
+                </bs3:tab>
+            </bs3:tabGroup>
+        </bs3:col>
+    </bs3:row>
+</bs3:grid>
