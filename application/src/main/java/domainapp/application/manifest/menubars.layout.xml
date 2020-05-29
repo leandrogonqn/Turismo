@@ -137,7 +137,13 @@
                 </mb3:serviceAction>  
                 <mb3:serviceAction objectType="simple.ReservaEmpresaMenu" id="crear">
                     <cpt:named>Crear Reserva Empresa</cpt:named>
-                </mb3:serviceAction>                                
+                </mb3:serviceAction>   
+                <mb3:serviceAction objectType="simple.ReservaMenu" id="listarDisponibilidadPorProducto">
+                    <cpt:named>Listar Disponibilidad Por Productos</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.ReservaMenu" id="listarDisponibilidadPorLocalidad">
+                    <cpt:named>Listar Disponibilidad Por Localidad</cpt:named>
+                </mb3:serviceAction>                                             
                 <mb3:serviceAction objectType="simple.ReservaMenu" id="listar">
                     <cpt:named>Listar todas las Reservas</cpt:named>
                 </mb3:serviceAction>
@@ -185,6 +191,14 @@
                 </mb3:serviceAction>
             </mb3:section>                   
         </mb3:menu>
+        <mb3:menu>
+            <mb3:named>Autorizaciones</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.AutorizacionesMenu" id="listarVoucherParaAutorizar">
+                    <cpt:named>Listar y autorizar</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>
+        </mb3:menu>        
         <mb3:menu unreferencedActions="true">
             <mb3:named>Other</mb3:named>
         </mb3:menu>

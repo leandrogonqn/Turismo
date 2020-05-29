@@ -18,7 +18,11 @@
  */
 package domainapp.application.services.homepage;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.Nature;
@@ -26,21 +30,30 @@ import org.apache.isis.applib.services.i18n.TranslatableString;
 
 import domainapp.modules.simple.dom.provincia.Provincia;
 import domainapp.modules.simple.dom.provincia.ProvinciaMenu;
+import domainapp.modules.simple.dom.reserva.FechasDisponibles;
+import domainapp.modules.simple.dom.reserva.ReservaRepository;
 
 @DomainObject(
         nature = Nature.VIEW_MODEL,
         objectType = "domainapp.application.services.homepage.HomePageViewModel"
 )
 public class HomePageViewModel {
+	
+	public String tittle() {
+		return "Mutual del Personal de la Policia del Neuquen";
+	}
+	public TranslatableString title() {
+		return TranslatableString.tr("Mutual del Personal de la Policia del Neuquen");
+	}
+	
+	public List<FechasDisponibles> getDisponibilidad(){
+		Date fechaDeHoy = new Date();
+		Calendar fechaSumada = Calendar.getInstance();
+		fechaSumada.add(Calendar.MONTH, 5);
+		Date fechaDe5Meses = fechaSumada.getTime();
+		return reservaRepository.listarDisponibilidad(fechaDeHoy, fechaDe5Meses);
+	}
 
-    public TranslatableString title() {
-        return TranslatableString.tr("{num} objects", "num", getObjects().size());
-    }
-
-    public List<Provincia> getObjects() {
-        return provincia.listar();
-    }
-
-    @javax.inject.Inject
-    ProvinciaMenu provincia;
+    @Inject
+    ReservaRepository reservaRepository;
 }
