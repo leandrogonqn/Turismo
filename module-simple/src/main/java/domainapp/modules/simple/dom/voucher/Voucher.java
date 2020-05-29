@@ -169,7 +169,7 @@ public class Voucher implements Comparable<Voucher>{
 	
 	@Column(name="reservaId", allowsNull="true")
 	@Property(editing=Editing.DISABLED)
-	@PropertyLayout(named="Reserva", hidden=Where.ALL_TABLES)
+	@PropertyLayout(named="Reserva")
 	private Reserva voucherReserva;
 	
 	public Reserva getVoucherReserva() {

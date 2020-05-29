@@ -134,7 +134,10 @@
                 </mb3:serviceAction>            
                 <mb3:serviceAction objectType="simple.ReservaNoAfiliadoMenu" id="crear">
                     <cpt:named>Crear Reserva No Afiliado</cpt:named>
-                </mb3:serviceAction>                  
+                </mb3:serviceAction>  
+                <mb3:serviceAction objectType="simple.ReservaEmpresaMenu" id="crear">
+                    <cpt:named>Crear Reserva Empresa</cpt:named>
+                </mb3:serviceAction>                                
                 <mb3:serviceAction objectType="simple.ReservaMenu" id="listar">
                     <cpt:named>Listar todas las Reservas</cpt:named>
                 </mb3:serviceAction>
