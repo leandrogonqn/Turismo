@@ -81,8 +81,6 @@ public class ReservaRepository {
 		return "";
 	}
 	
-	//cuando ya este creado el viewmodel fechasDisponibles hacer metodo listarDisponibilidad que devuelve una lista de fechasDisponibles
-	
 	@Inject
 	RepositoryService repositoryService;
 	

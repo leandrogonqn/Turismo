@@ -67,6 +67,11 @@ public class ReservaEmpresaMenu {
     		return "El producto ya se encuentra reservado en las fechas seleccionadas";
     	return "";
     }
+    
+	public Date default1Crear() {
+		Date hoy = new Date();
+		return hoy;
+	}
 	
     @Inject
     ReservaEmpresaRepository reservaEmpresaRepository;

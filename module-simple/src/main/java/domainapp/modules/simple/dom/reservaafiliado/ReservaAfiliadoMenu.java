@@ -81,7 +81,11 @@ public class ReservaAfiliadoMenu {
 		}
 		return "";
 	}
-	//default fecha reserva hoy (no hacerlo aun)
+	
+	public Date default1Crear() {
+		Date hoy = new Date();
+		return hoy;
+	}
 	
     public String obtenerUsuario() {          
     	String usuario = userService.getUser().getName();
