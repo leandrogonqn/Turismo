@@ -19,13 +19,13 @@ public class AfiliadoRepository {
 	
 	private Connection conexion = null;
 	//para la conexion local -->
-	private String url = "jdbc:mysql://localhost:3306/afiliacion";
-	private String user = "root";
-	private String password = "Lean3366";
+//	private String url = "jdbc:mysql://localhost:3306/afiliacion";
+//	private String user = "root";
+//	private String password = "Lean3366";
 	//para la conexion a la mutual -->
-//	private String url = "jdbc:mysql://192.168.0.6:3306/afiliacion";
-//	private String user = "turismo";
-//	private String password = "pass";
+	private String url = "jdbc:mysql://192.168.0.6:3306/afiliacion";
+	private String user = "turismo";
+	private String password = "pass";
 	
 	public List<Afiliado> listar() {
 		try {
@@ -46,31 +46,31 @@ public class AfiliadoRepository {
 				while(rs.next()){
 					Afiliado afiliado = new Afiliado();
 					//para la conexion local
-					afiliado.setAfiliadoId(rs.getInt(1));
-					afiliado.setAfiliadoActivo(rs.getBoolean(2));
-					afiliado.setAfiliadoCBU(rs.getString(3));
-					afiliado.setAfiliadoLP(rs.getString(4));
-					afiliado.setPersonaCuitCuil(rs.getString(5));
-					afiliado.setPersonaDireccion(rs.getString(6));
-					afiliado.setPersonaJuridicaApellido(rs.getString(7));
-					afiliado.setPersonaJuridicaDni(rs.getInt(8));
-					afiliado.setPersonaJuridicaNombre(rs.getString(9));
-					afiliado.setPersonaLocalidadId(rs.getInt(10));
-					afiliado.setPersonaMail(rs.getString(11));
-					afiliado.setPersonaTelefono(rs.getString(12));						
-					//para la mutual
-//					afiliado.setAfiliadoId(rs.getInt(2));
-//					afiliado.setAfiliadoActivo(rs.getBoolean(1));
-//					afiliado.setAfiliadoCBU(rs.getString(8));
-//					afiliado.setAfiliadoLP(rs.getString(6));
-//					afiliado.setPersonaCuitCuil(rs.getString(7));
-//					afiliado.setPersonaDireccion(rs.getString(10));
-//					afiliado.setPersonaJuridicaApellido(rs.getString(4));
-//					afiliado.setPersonaJuridicaDni(rs.getInt(3));
-//					afiliado.setPersonaJuridicaNombre(rs.getString(5));
-//					afiliado.setPersonaLocalidadId(rs.getInt(9));
+//					afiliado.setAfiliadoId(rs.getInt(1));
+//					afiliado.setAfiliadoActivo(rs.getBoolean(2));
+//					afiliado.setAfiliadoCBU(rs.getString(3));
+//					afiliado.setAfiliadoLP(rs.getString(4));
+//					afiliado.setPersonaCuitCuil(rs.getString(5));
+//					afiliado.setPersonaDireccion(rs.getString(6));
+//					afiliado.setPersonaJuridicaApellido(rs.getString(7));
+//					afiliado.setPersonaJuridicaDni(rs.getInt(8));
+//					afiliado.setPersonaJuridicaNombre(rs.getString(9));
+//					afiliado.setPersonaLocalidadId(rs.getInt(10));
 //					afiliado.setPersonaMail(rs.getString(11));
-//					afiliado.setPersonaTelefono(rs.getString(12));	
+//					afiliado.setPersonaTelefono(rs.getString(12));						
+					//para la mutual
+					afiliado.setAfiliadoId(rs.getInt(2));
+					afiliado.setAfiliadoActivo(rs.getBoolean(1));
+					afiliado.setAfiliadoCBU(rs.getString(8));
+					afiliado.setAfiliadoLP(rs.getString(6));
+					afiliado.setPersonaCuitCuil(rs.getString(7));
+					afiliado.setPersonaDireccion(rs.getString(10));
+					afiliado.setPersonaJuridicaApellido(rs.getString(4));
+					afiliado.setPersonaJuridicaDni(rs.getInt(3));
+					afiliado.setPersonaJuridicaNombre(rs.getString(5));
+					afiliado.setPersonaLocalidadId(rs.getInt(9));
+					afiliado.setPersonaMail(rs.getString(11));
+					afiliado.setPersonaTelefono(rs.getString(12));	
 					afiliados.add(afiliado);
 				}
 			}
@@ -107,31 +107,31 @@ public class AfiliadoRepository {
 				
 				if(rs.next()) {
 					//para la conexion local
-					afiliado.setAfiliadoId(rs.getInt(1));
-					afiliado.setAfiliadoActivo(rs.getBoolean(2));
-					afiliado.setAfiliadoCBU(rs.getString(3));
-					afiliado.setAfiliadoLP(rs.getString(4));
-					afiliado.setPersonaCuitCuil(rs.getString(5));
-					afiliado.setPersonaDireccion(rs.getString(6));
-					afiliado.setPersonaJuridicaApellido(rs.getString(7));
-					afiliado.setPersonaJuridicaDni(rs.getInt(8));
-					afiliado.setPersonaJuridicaNombre(rs.getString(9));
-					afiliado.setPersonaLocalidadId(rs.getInt(10));
-					afiliado.setPersonaMail(rs.getString(11));
-					afiliado.setPersonaTelefono(rs.getString(12));						
-					//para la mutual
-//					afiliado.setAfiliadoId(rs.getInt(2));
-//					afiliado.setAfiliadoActivo(rs.getBoolean(1));
-//					afiliado.setAfiliadoCBU(rs.getString(8));
-//					afiliado.setAfiliadoLP(rs.getString(6));
-//					afiliado.setPersonaCuitCuil(rs.getString(7));
-//					afiliado.setPersonaDireccion(rs.getString(10));
-//					afiliado.setPersonaJuridicaApellido(rs.getString(4));
-//					afiliado.setPersonaJuridicaDni(rs.getInt(3));
-//					afiliado.setPersonaJuridicaNombre(rs.getString(5));
-//					afiliado.setPersonaLocalidadId(rs.getInt(9));
+//					afiliado.setAfiliadoId(rs.getInt(1));
+//					afiliado.setAfiliadoActivo(rs.getBoolean(2));
+//					afiliado.setAfiliadoCBU(rs.getString(3));
+//					afiliado.setAfiliadoLP(rs.getString(4));
+//					afiliado.setPersonaCuitCuil(rs.getString(5));
+//					afiliado.setPersonaDireccion(rs.getString(6));
+//					afiliado.setPersonaJuridicaApellido(rs.getString(7));
+//					afiliado.setPersonaJuridicaDni(rs.getInt(8));
+//					afiliado.setPersonaJuridicaNombre(rs.getString(9));
+//					afiliado.setPersonaLocalidadId(rs.getInt(10));
 //					afiliado.setPersonaMail(rs.getString(11));
-//					afiliado.setPersonaTelefono(rs.getString(12));	
+//					afiliado.setPersonaTelefono(rs.getString(12));						
+					//para la mutual
+					afiliado.setAfiliadoId(rs.getInt(2));
+					afiliado.setAfiliadoActivo(rs.getBoolean(1));
+					afiliado.setAfiliadoCBU(rs.getString(8));
+					afiliado.setAfiliadoLP(rs.getString(6));
+					afiliado.setPersonaCuitCuil(rs.getString(7));
+					afiliado.setPersonaDireccion(rs.getString(10));
+					afiliado.setPersonaJuridicaApellido(rs.getString(4));
+					afiliado.setPersonaJuridicaDni(rs.getInt(3));
+					afiliado.setPersonaJuridicaNombre(rs.getString(5));
+					afiliado.setPersonaLocalidadId(rs.getInt(9));
+					afiliado.setPersonaMail(rs.getString(11));
+					afiliado.setPersonaTelefono(rs.getString(12));	
 				}
 
 			}
@@ -171,31 +171,31 @@ public class AfiliadoRepository {
 				while(rs.next()){
 					Afiliado afiliado = new Afiliado();
 					//para la conexion local
-					afiliado.setAfiliadoId(rs.getInt(1));
-					afiliado.setAfiliadoActivo(rs.getBoolean(2));
-					afiliado.setAfiliadoCBU(rs.getString(3));
-					afiliado.setAfiliadoLP(rs.getString(4));
-					afiliado.setPersonaCuitCuil(rs.getString(5));
-					afiliado.setPersonaDireccion(rs.getString(6));
-					afiliado.setPersonaJuridicaApellido(rs.getString(7));
-					afiliado.setPersonaJuridicaDni(rs.getInt(8));
-					afiliado.setPersonaJuridicaNombre(rs.getString(9));
-					afiliado.setPersonaLocalidadId(rs.getInt(10));
-					afiliado.setPersonaMail(rs.getString(11));
-					afiliado.setPersonaTelefono(rs.getString(12));						
-					//para la mutual
-//					afiliado.setAfiliadoId(rs.getInt(2));
-//					afiliado.setAfiliadoActivo(rs.getBoolean(1));
-//					afiliado.setAfiliadoCBU(rs.getString(8));
-//					afiliado.setAfiliadoLP(rs.getString(6));
-//					afiliado.setPersonaCuitCuil(rs.getString(7));
-//					afiliado.setPersonaDireccion(rs.getString(10));
-//					afiliado.setPersonaJuridicaApellido(rs.getString(4));
-//					afiliado.setPersonaJuridicaDni(rs.getInt(3));
-//					afiliado.setPersonaJuridicaNombre(rs.getString(5));
-//					afiliado.setPersonaLocalidadId(rs.getInt(9));
+//					afiliado.setAfiliadoId(rs.getInt(1));
+//					afiliado.setAfiliadoActivo(rs.getBoolean(2));
+//					afiliado.setAfiliadoCBU(rs.getString(3));
+//					afiliado.setAfiliadoLP(rs.getString(4));
+//					afiliado.setPersonaCuitCuil(rs.getString(5));
+//					afiliado.setPersonaDireccion(rs.getString(6));
+//					afiliado.setPersonaJuridicaApellido(rs.getString(7));
+//					afiliado.setPersonaJuridicaDni(rs.getInt(8));
+//					afiliado.setPersonaJuridicaNombre(rs.getString(9));
+//					afiliado.setPersonaLocalidadId(rs.getInt(10));
 //					afiliado.setPersonaMail(rs.getString(11));
-//					afiliado.setPersonaTelefono(rs.getString(12));	
+//					afiliado.setPersonaTelefono(rs.getString(12));						
+					//para la mutual
+					afiliado.setAfiliadoId(rs.getInt(2));
+					afiliado.setAfiliadoActivo(rs.getBoolean(1));
+					afiliado.setAfiliadoCBU(rs.getString(8));
+					afiliado.setAfiliadoLP(rs.getString(6));
+					afiliado.setPersonaCuitCuil(rs.getString(7));
+					afiliado.setPersonaDireccion(rs.getString(10));
+					afiliado.setPersonaJuridicaApellido(rs.getString(4));
+					afiliado.setPersonaJuridicaDni(rs.getInt(3));
+					afiliado.setPersonaJuridicaNombre(rs.getString(5));
+					afiliado.setPersonaLocalidadId(rs.getInt(9));
+					afiliado.setPersonaMail(rs.getString(11));
+					afiliado.setPersonaTelefono(rs.getString(12));	
 					afiliados.add(afiliado);
 				}
 			}
@@ -234,31 +234,31 @@ public class AfiliadoRepository {
 				while(rs.next()){
 					Afiliado afiliado = new Afiliado();
 					//para la conexion local
-					afiliado.setAfiliadoId(rs.getInt(1));
-					afiliado.setAfiliadoActivo(rs.getBoolean(2));
-					afiliado.setAfiliadoCBU(rs.getString(3));
-					afiliado.setAfiliadoLP(rs.getString(4));
-					afiliado.setPersonaCuitCuil(rs.getString(5));
-					afiliado.setPersonaDireccion(rs.getString(6));
-					afiliado.setPersonaJuridicaApellido(rs.getString(7));
-					afiliado.setPersonaJuridicaDni(rs.getInt(8));
-					afiliado.setPersonaJuridicaNombre(rs.getString(9));
-					afiliado.setPersonaLocalidadId(rs.getInt(10));
-					afiliado.setPersonaMail(rs.getString(11));
-					afiliado.setPersonaTelefono(rs.getString(12));						
-					//para la mutual
-//					afiliado.setAfiliadoId(rs.getInt(2));
-//					afiliado.setAfiliadoActivo(rs.getBoolean(1));
-//					afiliado.setAfiliadoCBU(rs.getString(8));
-//					afiliado.setAfiliadoLP(rs.getString(6));
-//					afiliado.setPersonaCuitCuil(rs.getString(7));
-//					afiliado.setPersonaDireccion(rs.getString(10));
-//					afiliado.setPersonaJuridicaApellido(rs.getString(4));
-//					afiliado.setPersonaJuridicaDni(rs.getInt(3));
-//					afiliado.setPersonaJuridicaNombre(rs.getString(5));
-//					afiliado.setPersonaLocalidadId(rs.getInt(9));
+//					afiliado.setAfiliadoId(rs.getInt(1));
+//					afiliado.setAfiliadoActivo(rs.getBoolean(2));
+//					afiliado.setAfiliadoCBU(rs.getString(3));
+//					afiliado.setAfiliadoLP(rs.getString(4));
+//					afiliado.setPersonaCuitCuil(rs.getString(5));
+//					afiliado.setPersonaDireccion(rs.getString(6));
+//					afiliado.setPersonaJuridicaApellido(rs.getString(7));
+//					afiliado.setPersonaJuridicaDni(rs.getInt(8));
+//					afiliado.setPersonaJuridicaNombre(rs.getString(9));
+//					afiliado.setPersonaLocalidadId(rs.getInt(10));
 //					afiliado.setPersonaMail(rs.getString(11));
-//					afiliado.setPersonaTelefono(rs.getString(12));	
+//					afiliado.setPersonaTelefono(rs.getString(12));						
+					//para la mutual
+					afiliado.setAfiliadoId(rs.getInt(2));
+					afiliado.setAfiliadoActivo(rs.getBoolean(1));
+					afiliado.setAfiliadoCBU(rs.getString(8));
+					afiliado.setAfiliadoLP(rs.getString(6));
+					afiliado.setPersonaCuitCuil(rs.getString(7));
+					afiliado.setPersonaDireccion(rs.getString(10));
+					afiliado.setPersonaJuridicaApellido(rs.getString(4));
+					afiliado.setPersonaJuridicaDni(rs.getInt(3));
+					afiliado.setPersonaJuridicaNombre(rs.getString(5));
+					afiliado.setPersonaLocalidadId(rs.getInt(9));
+					afiliado.setPersonaMail(rs.getString(11));
+					afiliado.setPersonaTelefono(rs.getString(12));	
 					afiliados.add(afiliado);
 				}
 			}
@@ -296,31 +296,31 @@ public class AfiliadoRepository {
 				while(rs.next()){
 					Afiliado afiliado = new Afiliado();
 					//para la conexion local
-					afiliado.setAfiliadoId(rs.getInt(1));
-					afiliado.setAfiliadoActivo(rs.getBoolean(2));
-					afiliado.setAfiliadoCBU(rs.getString(3));
-					afiliado.setAfiliadoLP(rs.getString(4));
-					afiliado.setPersonaCuitCuil(rs.getString(5));
-					afiliado.setPersonaDireccion(rs.getString(6));
-					afiliado.setPersonaJuridicaApellido(rs.getString(7));
-					afiliado.setPersonaJuridicaDni(rs.getInt(8));
-					afiliado.setPersonaJuridicaNombre(rs.getString(9));
-					afiliado.setPersonaLocalidadId(rs.getInt(10));
-					afiliado.setPersonaMail(rs.getString(11));
-					afiliado.setPersonaTelefono(rs.getString(12));						
-					//para la mutual
-//					afiliado.setAfiliadoId(rs.getInt(2));
-//					afiliado.setAfiliadoActivo(rs.getBoolean(1));
-//					afiliado.setAfiliadoCBU(rs.getString(8));
-//					afiliado.setAfiliadoLP(rs.getString(6));
-//					afiliado.setPersonaCuitCuil(rs.getString(7));
-//					afiliado.setPersonaDireccion(rs.getString(10));
-//					afiliado.setPersonaJuridicaApellido(rs.getString(4));
-//					afiliado.setPersonaJuridicaDni(rs.getInt(3));
-//					afiliado.setPersonaJuridicaNombre(rs.getString(5));
-//					afiliado.setPersonaLocalidadId(rs.getInt(9));
+//					afiliado.setAfiliadoId(rs.getInt(1));
+//					afiliado.setAfiliadoActivo(rs.getBoolean(2));
+//					afiliado.setAfiliadoCBU(rs.getString(3));
+//					afiliado.setAfiliadoLP(rs.getString(4));
+//					afiliado.setPersonaCuitCuil(rs.getString(5));
+//					afiliado.setPersonaDireccion(rs.getString(6));
+//					afiliado.setPersonaJuridicaApellido(rs.getString(7));
+//					afiliado.setPersonaJuridicaDni(rs.getInt(8));
+//					afiliado.setPersonaJuridicaNombre(rs.getString(9));
+//					afiliado.setPersonaLocalidadId(rs.getInt(10));
 //					afiliado.setPersonaMail(rs.getString(11));
-//					afiliado.setPersonaTelefono(rs.getString(12));	
+//					afiliado.setPersonaTelefono(rs.getString(12));						
+					//para la mutual
+					afiliado.setAfiliadoId(rs.getInt(2));
+					afiliado.setAfiliadoActivo(rs.getBoolean(1));
+					afiliado.setAfiliadoCBU(rs.getString(8));
+					afiliado.setAfiliadoLP(rs.getString(6));
+					afiliado.setPersonaCuitCuil(rs.getString(7));
+					afiliado.setPersonaDireccion(rs.getString(10));
+					afiliado.setPersonaJuridicaApellido(rs.getString(4));
+					afiliado.setPersonaJuridicaDni(rs.getInt(3));
+					afiliado.setPersonaJuridicaNombre(rs.getString(5));
+					afiliado.setPersonaLocalidadId(rs.getInt(9));
+					afiliado.setPersonaMail(rs.getString(11));
+					afiliado.setPersonaTelefono(rs.getString(12));	
 					afiliados.add(afiliado);
 				}
 			}

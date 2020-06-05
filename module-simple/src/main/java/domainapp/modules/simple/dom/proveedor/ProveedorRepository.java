@@ -19,13 +19,13 @@ public class ProveedorRepository {
 	
 	private Connection conexion = null;
 	//para la conexion local -->
-	private String url = "jdbc:mysql://localhost:3306/afiliacion";
-	private String user = "root";
-	private String password = "Lean3366";
+//	private String url = "jdbc:mysql://localhost:3306/afiliacion";
+//	private String user = "root";
+//	private String password = "Lean3366";
 	//para la conexion a la mutual -->
-//	private String url = "jdbc:mysql://192.168.0.6:3306/afiliacion";
-//	private String user = "turismo";
-//	private String password = "pass";
+	private String url = "jdbc:mysql://192.168.0.6:3306/afiliacion";
+	private String user = "turismo";
+	private String password = "pass";
 	
 	public List<Proveedor> listar() {
 		try {
